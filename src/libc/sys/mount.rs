@@ -43,7 +43,7 @@ pub struct statfs {
 }
 unsafe impl SafeRead for statfs {}
 
-fn statfs(env: &mut Environment, path: ConstPtr<u8>, buf: MutPtr<statfs>) -> i32 {
+fn statfs(env: &mut Environment, _path: ConstPtr<u8>, buf: MutPtr<statfs>) -> i32 {
     // Values are taken from a test run of iOS 4.3 Simulator
     let mut statfs = statfs {
         f_bsize: 4096,
